@@ -1,0 +1,28 @@
+>>Lab Setup
+>Virtualization : VM WorkStation Pro 12.5 (Purchased license from DHGate.com, $5.00)
+* Ansible VM
+> Centos OS VM with Minimal Installation
+* NAT network
+* Activate CentOS network adapter for first use as follows;
+* Nmcli d (will show network connected or disconnected, if disconnected next step_
+* Nmtui (Enable DHCP + Enable the network)
+* Dhclient -r (Release DHCP IP Address )
+* dhclient (Renew DHCP IP Address )
+o Ansible installation
+* Ansible is part of Extra Packages for Enterprise Linux (EPEL), which is a community repository of non-standard packages for the RHEL distribution. First, we’ll install the EPEL repository:
+* yum install epel-release
+* sudo yum -y install ansible
+* ansible --version (To verify Ansible is installed properly)
+* Cisco VIRL ($ 199 USD)
+> 20 Node License Personal Edition
+* Setup Per VIRL documentation
+* VMENT 8: NAT to outside
+* VMNET1 : 172.16.1.0/24 – Ansible and Cisco Network devices shared LAN
+ 
+ 
+
+ 
+ 
+ 
+ 
+
