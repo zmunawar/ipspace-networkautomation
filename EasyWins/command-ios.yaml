@@ -1,0 +1,10 @@
+---
+- name: "show version on IOS device"
+  hosts: IOS
+  connection: local
+  tasks:
+    - ios_command:
+      commands: show version
+      host: "{{inventory_hostname}}"
+      username: cisco
+      password: cisco
