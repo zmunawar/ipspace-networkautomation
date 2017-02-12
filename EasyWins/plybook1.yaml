@@ -1,0 +1,4 @@
+---
+- hosts: IOS
+tasks:
+- raw: "show ip route"

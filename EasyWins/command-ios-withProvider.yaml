@@ -5,6 +5,4 @@
   tasks:
   - ios_command:
       commands: show version
-      host: "{{inventory_hostname}}"
-      username: cisco
-      password: cisco
+      provider: "{{cli}}"

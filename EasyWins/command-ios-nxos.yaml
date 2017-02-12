@@ -1,0 +1,28 @@
+---
+- name: "commands on IOS device"
+  hosts: IOS
+  connection: local
+  tasks:
+  - ios_command:
+      commands: 
+       - show version
+       - show ip route
+      wait_for: result[0] contains Cisco
+      host: "{{inventory_hostname}}"
+      username: cisco
+      password: cisco
+    register: result
+  - debug: var=result.stdout_lines
+
+
+- name: "commands on NXOS device"
+  hosts: NXOS
+  connection: local
+  tasks:
+  - nxos_command:
+      commands: show version
+      host: "{{inventory_hostname}}"
+      username: admin
+      password: admin
+    register: result
+  - debug: var=result.stdout_lines

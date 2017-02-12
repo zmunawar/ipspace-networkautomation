@@ -1,0 +1,23 @@
+---
+- name: "commands on IOS device"
+  hosts: IOS
+  connection: local
+  tasks:
+  - ios_command:
+      commands: 
+       - show version
+       - show ip route
+      wait_for: result[0] contains Cisco
+      provider: "{{cli}}"
+    register: result
+  - debug: var=result.stdout_lines
+
+- name: "commands on NXOS device"
+  hosts: NXOS
+  connection: local
+  tasks:
+  - nxos_command:
+      commands: show version
+      provider: "{{cli}}"
+    register: result
+  - debug: var=result.stdout_lines

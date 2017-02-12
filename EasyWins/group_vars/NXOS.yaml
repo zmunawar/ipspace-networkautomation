@@ -1,0 +1,7 @@
+---
+ansible_device_os: NXOS
+cli:
+  username: admin
+  password: admin
+  host: "{{inventory_hostname}}"
+  transport: cli
